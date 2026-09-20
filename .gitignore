@@ -1,0 +1,39 @@
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --- secrets & local config ---
+.env
+.env.*
+!.env.example
+
+# --- trained models (too big for git; store on Hugging Face / GitHub Releases) ---
+*.pt
+*.pth
+*.onnx
+
+# --- test images & outputs (medical images should not be committed) ---
+backend/*.jpg
+backend/*.jpeg
+backend/*.png
+demo_images/
+gradcam_output.jpg
+*.nii
+*.nii.gz
+
+# --- frontend (used later) ---
+node_modules/
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+
+# --- editor / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
