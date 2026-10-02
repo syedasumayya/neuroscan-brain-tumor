@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   NeuroScan design tokens: a radiology "light-box" palette.
+   Magenta is reserved for flagged results, so it always means
+   "look here". Everything else stays calm.
+---------------------------------------------------------------- */
+@theme {
+  /* surfaces */
+  --color-lightbox: #e8edf1;
+  --color-film: #f7f9fa;
+  --color-line: #cdd6dd;
+
+  /* text */
+  --color-ink: #132330;
+  --color-muted: #5b6b78;
+
+  /* brand */
+  --color-cortex: #1f6f78;
+  --color-cortex-dark: #17565d;
+  --color-cortex-soft: #dcecee;
+
+  /* result states */
+  --color-signal: #d6336c;       /* tumour suspected */
+  --color-signal-soft: #fbe7ee;
+  --color-clear: #2e8b6a;        /* no tumour detected */
+  --color-clear-soft: #e1f2ea;
+  --color-caution: #a86a12;      /* not a brain MRI / low confidence */
+  --color-caution-soft: #f8eed9;
+
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-lightbox);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cortex);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Dark theme: same tokens, overridden when <html data-theme="dark">.
+   Utilities like bg-film compile to var(--color-film), so overriding the
+   variable here is enough - no per-component dark: classes needed. */
+:root[data-theme="dark"] {
+  --color-lightbox: #0e161d;
+  --color-film: #17222b;
+  --color-line: #2b3947;
+
+  --color-ink: #e8edf1;
+  --color-muted: #93a5b3;
+
+  --color-cortex: #38a0aa;
+  --color-cortex-dark: #2c7f88;
+  --color-cortex-soft: rgba(56, 160, 170, 0.16);
+
+  --color-signal: #f0538a;
+  --color-signal-soft: rgba(240, 83, 138, 0.16);
+  --color-clear: #4bc498;
+  --color-clear-soft: rgba(75, 196, 152, 0.14);
+  --color-caution: #d99a3d;
+  --color-caution-soft: rgba(217, 154, 61, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
