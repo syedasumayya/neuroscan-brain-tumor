@@ -38,8 +38,6 @@ Most brain tumor detection demos stop at a probability score. That's not very us
 
 **MRI validity gate** — a second ResNet-18, trained to distinguish brain MRIs from chest X-rays, photos, textures, and generated non-medical images. At its operating threshold: 100% of held-out brain MRIs accepted, ≥ 99.7% of every non-brain source rejected.
 
-See [Limitations](#limitations) for what these numbers do and don't mean.
-
 ## Tech stack
 
 **Backend**: Python, FastAPI, PyTorch, torchvision, nibabel (NIfTI), Grad-CAM
