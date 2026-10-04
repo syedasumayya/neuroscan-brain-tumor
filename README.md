@@ -100,7 +100,3 @@ Trained weights aren't committed to this repo (they're large binary files). Trai
 - **Chest X-Ray Images (Pneumonia)** — Paul Mooney (Kaggle), originally from Kermany et al.
 - **Flowers102** and **DTD** textures — Oxford VGG, via torchvision
 - ResNet-18 ImageNet weights — torchvision
-
-## License
-
-Add a license of your choice (MIT is common for student projects) — see [choosealicense.com](https://choosealicense.com/).
